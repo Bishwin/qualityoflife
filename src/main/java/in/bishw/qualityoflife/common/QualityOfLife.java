@@ -1,15 +1,15 @@
 package in.bishw.qualityoflife.common;
 
+import in.bishw.qualityoflife.common.proxy.CommonProxy;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = QualityOfLife.MODID,
-        name = QualityOfLife.NAME,
-        version = QualityOfLife.VERSION)
+@Mod(modid = QualityOfLife.MODID, name = QualityOfLife.NAME, version = QualityOfLife.VERSION)
 public class QualityOfLife {
     public static final String MODID = "qol";
     public static final String NAME = "Quality of Life";
@@ -17,14 +17,25 @@ public class QualityOfLife {
 
     private static Logger logger;
 
-    @EventHandler
+    @SidedProxy(clientSide = "in.bishw.qualityoflife.common.proxy.ClientProxy", serverSide = "in.bishw.qualityoflife.common.proxy.ServerSide")
+    public static CommonProxy proxy;
+
+    public static QualityOfLife instance;
+
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
+        proxy.preInit(event);
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        // some example code
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        proxy.init(event);
+    }
+
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        proxy.postInit(event);
     }
 }
