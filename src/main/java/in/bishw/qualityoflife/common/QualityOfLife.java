@@ -24,7 +24,7 @@ public class QualityOfLife {
 
     public static QualityOfLife instance;
 
-    public static CreativeTabs creativeTab = new CreativeTabs(0, "Quality of Life") {
+    public static CreativeTabs creativeTab = new CreativeTabs(0, "qualityoflife") {
         @Override
         public ItemStack getTabIconItem() {
             return new ItemStack(ModBlock.blockFastFurnace);
