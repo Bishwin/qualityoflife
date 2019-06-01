@@ -1,5 +1,6 @@
 package in.bishw.qualityoflife.common.proxy;
 
+import in.bishw.qualityoflife.common.ModBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -16,6 +17,7 @@ public class ClientProxy extends CommonProxy {
 
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
+        ModBlock.initModels();
     }
 
 }
