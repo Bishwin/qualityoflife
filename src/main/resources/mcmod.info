@@ -1,6 +1,6 @@
 [
 {
-  "modid": "qol",
+  "modid": "qualityoflife",
   "name": "Quality of Life",
   "description": "Example placeholder mod.",
   "version": "${version}",

@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 @Mod(modid = QualityOfLife.MODID, name = QualityOfLife.NAME, version = QualityOfLife.VERSION)
 public class QualityOfLife {
-    public static final String MODID = "qol";
+    public static final String MODID = "qualityoflife";
     public static final String NAME = "Quality of Life";
     public static final String VERSION = "0.0.1";
 
