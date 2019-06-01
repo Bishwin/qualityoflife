@@ -1,7 +1,9 @@
 package in.bishw.qualityoflife.common;
 
 import in.bishw.qualityoflife.common.proxy.CommonProxy;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -21,6 +23,13 @@ public class QualityOfLife {
     public static CommonProxy proxy;
 
     public static QualityOfLife instance;
+
+    public static CreativeTabs creativeTab = new CreativeTabs(0, "Quality of Life") {
+        @Override
+        public ItemStack getTabIconItem() {
+            return new ItemStack(ModBlock.blockFastFurnace);
+        }
+    };
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
