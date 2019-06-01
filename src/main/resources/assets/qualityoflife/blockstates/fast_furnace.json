@@ -1,13 +1,27 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "cube_all",
+    "model": "cube",
     "textures": {
-      "all": "qualityoflife:blocks/fast_furnace"
+      "particle": "qualityoflife:blocks/fast_furnace",
+      "north": "qualityoflife:blocks/fast_furnace",
+      "south": "qualityoflife:blocks/side",
+      "west": "qualityoflife:blocks/side",
+      "east": "qualityoflife:blocks/side",
+      "up": "qualityoflife:blocks/top",
+      "down": "qualityoflife:blocks/bottom"
     }
   },
   "variants": {
     "normal": [{}],
-    "inventory": [{}]
+    "inventory": [{}],
+    "facing": {
+      "north": {},
+      "south": {"y": 180},
+      "west": {"y": 270},
+      "east": {"y": 90},
+      "up": {"x": -90},
+      "down": {"x": 90}
+    }
   }
 }
